@@ -1,0 +1,54 @@
+/* TEMP TEST */
+body { background: #fff3cd !important; }  /* pale yellow */
+
+@import "tailwindcss";
+
+/* ===== App base ===== */
+html, body, #root { height: 100%; }
+body { @apply bg-gray-50 text-gray-800 antialiased; }
+
+/* ===== Reusable UI helpers ===== */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2
+         font-medium transition duration-150 ease-out
+         disabled:opacity-60 disabled:cursor-not-allowed;
+}
+.btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow; }
+.btn-ghost   { @apply btn bg-transparent hover:bg-gray-100; }
+.btn-outline { @apply btn border border-gray-300 bg-white hover:bg-gray-50; }
+
+.input {
+  @apply w-full rounded-xl border border-gray-300 bg-white px-3 py-2
+         outline-none focus:ring-4 focus:ring-brand-200;
+}
+.select { @apply input; }
+.textarea { @apply input min-h-[120px]; }
+
+.label { @apply text-sm font-medium text-gray-700; }
+
+.card {
+  @apply rounded-2xl bg-white p-5 shadow-[0_10px_25px_rgba(0,0,0,0.06)];
+}
+
+/* ===== Layout tweaks ===== */
+.page-title { @apply mb-4 text-3xl font-semibold; }
+.section    { @apply mb-6; }
+
+/* ===== Table defaults ===== */
+.table {
+  @apply w-full border-collapse rounded-xl overflow-hidden;
+}
+.table thead th {
+  @apply bg-gray-100 text-left text-sm font-semibold px-3 py-2;
+}
+.table tbody td {
+  @apply border-t px-3 py-2;
+}
+
+/* ===== Brand color scale (matches tailwind.config.js) ===== */
+:root {
+  /* optional: CSS vars if you want to reuse outside of @apply */
+  --brand-50:#f5f3ff;  --brand-100:#ede9fe; --brand-200:#ddd6fe;
+  --brand-300:#c4b5fd; --brand-400:#a78bfa; --brand-500:#8b5cf6;
+  --brand-600:#7c3aed; --brand-700:#6d28d9; --brand-800:#5b21b6; --brand-900:#4c1d95;
+}
