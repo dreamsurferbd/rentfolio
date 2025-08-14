@@ -10,6 +10,16 @@ yarn-error.log*
 # Uploads folder (server)
 server/uploads/
 
+# Generated invoices / PDFs
+server/invoices/
+*.pdf
+
+# Database dumps / backups
+*.sql
+*.sqlite
+*.db
+*.bak
+
 # ---- Build output ----
 dist/
 build/
